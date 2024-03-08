@@ -94,6 +94,19 @@ buttonAddRandom.addEventListener("click", (event) => {
     </button>
   </td>
 `;
+  const deleteButton = newRow.querySelector(".btn-delete");
+  const likeButton = newRow.querySelector(".btn-like");
+
+  likeButton.addEventListener("click", (e) => {
+    e.currentTarget.classList.toggle("selected");
+
+    //likeButton.addEventListener("click", () => {
+    //console.log("Like button clicked!");
+  });
+  deleteButton.addEventListener("click", () => {
+    console.log("Delete button clicked!");
+    newRow.remove();
+  });
+
   tableBody.appendChild(newRow);
-  attachDeleteButtonListener();
 });
